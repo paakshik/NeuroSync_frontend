@@ -1,95 +1,93 @@
-NeuroSync: The Smart Companion 🧠✨
-Neuro-Inclusive Executive Function Support
+# NeuroSync: The Smart Companion 🧠✨
+### Neuro-Inclusive Executive Function Support
 
-NeuroSync is a specialized task management and executive function aid designed for neurodivergent individuals (ADHD, Autism, Anxiety, etc.). Unlike standard to-do lists, NeuroSync acts as a supportive body double—using AI to break down complex tasks into manageable micro-steps based on the user's current energy level, diagnosis, and focus capacity.
+**NeuroSync** is a specialized task management and executive function aid designed for neurodivergent individuals (ADHD, Autism, Anxiety, etc.). Unlike standard to-do lists, NeuroSync acts as a supportive body double—using AI to break down complex tasks into manageable micro-steps based on the user's current energy level, diagnosis, and focus capacity.
 
-🌟 Key Features
-🤖 adaptive AI Assistance
-Task Decomposition: Takes a vague goal (e.g., "Clean my room") and breaks it down into small, non-overwhelming steps tailored to your specific profile.
+---
 
-Context Aware: Generates steps based on your Energy Level (Low/Medium/High) and Focus Window (e.g., 15 mins).
+## 🌟 Key Features
 
-Recursive Breakdown: If a specific step is still too hard, the "Break It Down" feature splits that single step into 3 smaller micro-tasks.
+### 🤖 Adaptive AI Assistance
+* **Task Decomposition:** Takes a vague goal (e.g., "Clean my room") and breaks it down into small, non-overwhelming steps tailored to your specific profile.
+* **Context Aware:** Generates steps based on your **Energy Level** (Low/Medium/High) and **Focus Window** (e.g., 15 mins).
+* **Recursive Breakdown:** If a specific step is still too hard, the "Break It Down" feature splits that single step into 3 smaller micro-tasks.
 
-👁️ Multimodal Input
-Vision Analysis: Use your camera to scan a messy room or workspace. The AI analyzes the visual context and generates a cleanup plan.
+### 👁️ Multimodal Input
+* **Vision Analysis:** Use your camera to scan a messy room or workspace. The AI analyzes the visual context and generates a cleanup plan.
+* **Voice Command:** Integrated Groq (Whisper) transcription allows you to speak your tasks naturally.
+* **Text Input:** A simple, high-visibility input field for typing.
 
-Voice Command: Integrated Groq (Whisper) transcription allows you to speak your tasks naturally.
+### 🎮 Gamification & Motivation
+* **Streak System:** Tracks daily usage to build momentum.
+* **Dynamic Badges:** Earn ranks from *Initiator* to *Legendary* based on consistency.
+* **Positive Reinforcement:** Uses confetti effects and encouraging TTS (Text-to-Speech) voice feedback.
 
-Text Input: A simple, high-visibility input field for typing.
+### 🔒 Privacy & Local-First
+* **Client-Side Encryption:** User profiles are encrypted (`silentEncrypt`) before storage.
+* **Local Storage:** User data (Diagnosis, Name, Vault) is stored in the browser's IndexedDB, minimizing server-side data retention.
 
-🎮 Gamification & Motivation
-Streak System: Tracks daily usage to build momentum.
+---
 
-Dynamic Badges: Earn ranks from Initiator to Legendary based on consistency.
+## 🛠️ Tech Stack
 
-Positive Reinforcement: Uses confetti effects and encouraging TTS (Text-to-Speech) voice feedback.
+**Frontend:**
+* **Framework:** Next.js (App Router)
+* **Styling:** Tailwind CSS v4
+* **Icons:** Lucide React
+* **Fonts:** Lexend (Google Fonts)
+* **Animations:** Canvas Confetti, CSS Keyframes
 
-🔒 Privacy & Local-First
-Client-Side Encryption: User profiles are encrypted (silentEncrypt) before storage.
+**Backend (BFF & AI):**
+* **API Routes:** Next.js Server Actions/Route Handlers
+* **Transcription:** Groq SDK (Whisper-large-v3 model)
+* **Logic Engine:** Connects to an external Python FastAPI backend for complex reasoning
 
-Local Storage: User data (Diagnosis, Name, Vault) is stored in the browser's IndexedDB, minimizing server-side data retention.
+---
 
-🛠️ Tech Stack
-Frontend:
+## 🚀 Getting Started
 
-Framework: Next.js (App Router)
+### Prerequisites
+* Node.js (v18 or higher)
+* npm, pnpm, or yarn
+* A Groq API Key
 
-Styling: Tailwind CSS v4
+### Installation
 
-Icons: Lucide React
+1. **Clone the repository:**
+   ```bash
+   git clone [https://github.com/your-username/neurosync.git](https://github.com/your-username/neurosync.git)
+   cd neurosync
+   ```
 
-Fonts: Lexend (Google Fonts)
+2. **Install dependencies:**
+   ```bash
+   npm install
+   # or
+   yarn install
+   ```
 
-Animations: Canvas Confetti, CSS Keyframes
+3. **Environment Setup:**
+   Create a `.env.local` file in the root directory and add your Groq API key:
 
-Backend (BFF & AI):
+   ```bash
+   GROQ_API_KEY=your_groq_api_key_here
+   # Optional: Override backend URL if running locally
+   # NEXT_PUBLIC_BACKEND_URL=http://localhost:8000/api
+   ```
 
-API Routes: Next.js Server Actions/Route Handlers.
+4. **Run the development server:**
+   ```bash
+   npm run dev
+   ```
 
-Transcription: Groq SDK (Whisper-large-v3 model).
+5. **Open the app:**
+   Navigate to `http://localhost:3000` in your browser.
 
-Logic Engine: Connects to an external Python FastAPI backend for complex reasoning.
+---
 
-🚀 Getting Started
-Prerequisites
-Node.js (v18 or higher)
+## 📂 Project Structure
 
-npm, pnpm, or yarn
-
-A Groq API Key
-
-Installation
-Clone the repository:
-Bash
-```
-git clone https://github.com/your-username/neurosync.git
-cd neurosync
-```
-Install dependencies:
-```
-Bash
-npm install
-# or
-yarn install
-```
-Environment Setup:
-Create a .env.local file in the root directory and add your Groq API key:
-
-```
-GROQ_API_KEY=your_groq_api_key_here
-# Optional: Override backend URL if running locally
-# NEXT_PUBLIC_BACKEND_URL=http://localhost:8000/api
-Run the development server:
-
-Bash
-npm run dev
-Open the app:
-Navigate to http://localhost:3000 in your browser.
-```
-📂 Project Structure
-```
-Plaintext
+```plaintext
 ├── app/
 │   ├── api/bridge/route.js    # API Proxy (Handles Groq & FastAPI connection)
 │   ├── globals.css            # Tailwind v4 configuration & global styles
@@ -105,50 +103,45 @@ Plaintext
     └── logo.png
 ```
 
-🧩 Usage Guide
-Onboarding:
+---
 
-Upon first load, you will be asked to set up your "Neural Profile."
+## 🧩 Usage Guide
 
-Input your name, diagnosis type (e.g., ADHD), current energy level, and preferred focus duration.
+**Onboarding:**
+* Upon first load, you will be asked to set up your "Neural Profile."
+* Input your name, diagnosis type (e.g., ADHD), current energy level, and preferred focus duration.
+* *Note: This data is stored locally.*
 
-Note: This data is stored locally.
+**Dashboard:**
+* **Microphone:** Tap to speak your task.
+* **Camera:** Tap "Scan Environment" to take a photo of a task (e.g., a pile of laundry).
+* **Text:** Type a task in the input box.
 
-Dashboard:
+**Task Execution:**
+1.  The AI will generate a list of steps.
+2.  Click **"Hear It"** for voice guidance.
+3.  Click **"Break It Down"** if a specific step feels too big.
+4.  Click **"Done"** to complete steps and trigger rewards.
 
-Microphone: Tap to speak your task.
+**Settings:**
+* Click the gear icon to adjust your energy level or focus time dynamically as your day changes.
 
-Camera: Tap "Scan Environment" to take a photo of a task (e.g., a pile of laundry).
+---
 
-Text: Type a task in the input box.
+## 🤝 Contributing
 
-Task Execution:
-
-The AI will generate a list of steps.
-
-Click "Hear It" for voice guidance.
-
-Click "Break It Down" if a specific step feels too big.
-
-Click "Done" to complete steps and trigger rewards.
-
-Settings:
-
-Click the gear icon to adjust your energy level or focus time dynamically as your day changes.
-
-🤝 Contributing
 Contributions are welcome! This project focuses on accessibility and neuro-inclusion.
 
-Fork the Project
+1.  Fork the Project
+2.  Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
+3.  Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
+4.  Push to the Branch (`git push origin feature/AmazingFeature`)
+5.  Open a Pull Request
 
-Create your Feature Branch (git checkout -b feature/AmazingFeature)
+---
 
-Commit your Changes (git commit -m 'Add some AmazingFeature')
+## 📄 License
 
-Push to the Branch (git push origin feature/AmazingFeature)
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Open a Pull Request
-
-📄 License
-Distributed under the MIT License. See LICENSE for more information.
-Built with ❤️ for the Neurodivergent Community.
+*Built with ❤️ for the Neurodivergent Community.*
