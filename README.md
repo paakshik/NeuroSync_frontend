@@ -61,20 +61,22 @@ A Groq API Key
 
 Installation
 Clone the repository:
-
 Bash
+```
 git clone https://github.com/your-username/neurosync.git
 cd neurosync
+```
 Install dependencies:
-
+```
 Bash
 npm install
 # or
 yarn install
+```
 Environment Setup:
 Create a .env.local file in the root directory and add your Groq API key:
 
-Code snippet
+```
 GROQ_API_KEY=your_groq_api_key_here
 # Optional: Override backend URL if running locally
 # NEXT_PUBLIC_BACKEND_URL=http://localhost:8000/api
@@ -84,8 +86,9 @@ Bash
 npm run dev
 Open the app:
 Navigate to http://localhost:3000 in your browser.
-
+```
 📂 Project Structure
+```
 Plaintext
 ├── app/
 │   ├── api/bridge/route.js    # API Proxy (Handles Groq & FastAPI connection)
@@ -100,6 +103,8 @@ Plaintext
 │   └── db.js                  # IndexedDB helpers (getValue/setValue)
 └── public/
     └── logo.png
+```
+
 🧩 Usage Guide
 Onboarding:
 
@@ -146,5 +151,4 @@ Open a Pull Request
 
 📄 License
 Distributed under the MIT License. See LICENSE for more information.
-
 Built with ❤️ for the Neurodivergent Community.
